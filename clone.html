@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="webpage" id="page">
-        <header class="main-header">
+        <header class="site-header">
             <div class="headermenu-container">
                 <div class="siteheader">
                     <h1 class="logo">
@@ -31,12 +31,6 @@
                             </nav>
                         </div>
                     </div>
-                    <button class="menu-container">
-                      <span class="menu-box">
-                        <span class="menu-inner"></span>
-                      </span>
-                    </button>
-
                 </div>
             </div>
             <div class="headermenu-sub">
@@ -173,6 +167,7 @@
                     </nav>
                 </div>
             </div>
+            <div class="SiteHeaderBar" style="width: 90.3875px; left: 263.425px;"><span class="SiteHeaderBar-bg"></span></div>
         </header>
         <div id="content" class="sitecontent">
             <div class="value-container">
@@ -395,5 +390,36 @@
             </div>
         </div>
     </div>
+    <script>
+     document.addEventListener("DOMContentLoaded", function () {
+  const siteheader = document.querySelector(".siteheader");
+  const headermenuSub = document.querySelector(".headermenu-sub");
+
+  headermenuSub.style.display = "none";
+
+  siteheader.addEventListener("mouseenter", function () {
+    
+    siteheader.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+
+    headermenuSub.style.display = "block";
+    headermenuSub.style.opacity = 1;
+    headermenuSub.style.visibility = "visible";
+    headermenuSub.style.transform = "scale(1)";
+    headermenuSub.style.transitionDelay = "0.1s";
+  });
+
+  siteheader.addEventListener("mouseleave", function () {
+    siteheader.style.backgroundColor = "rgba(255, 255, 255, 0)";
+
+    headermenuSub.style.display = "none";
+    headermenuSub.style.opacity = 0;
+    headermenuSub.style.visibility = "hidden";
+    headermenuSub.style.transform = "scale(0.9)";
+    headermenuSub.style.transitionDelay = "0s";
+  });
+});
+
+
+    </script>
 </body>
 </html>
