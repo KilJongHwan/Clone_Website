@@ -1,0 +1,41 @@
+//==================================================*
+//	Common
+//==================================================*
+/**
+ * Common:Variable
+ */
+var $ = jQuery
+//==================================================*
+//	Image Lazy Loading
+//==================================================*
+function LazyLodingLoad() {
+	if($('.lazy').length > 0){
+		var windowHeight = $(window).height();
+		$('.lazy').each(function(){
+			var lazyTop = $(this).parent().offset().top;
+			var dataSrc = $(this).attr('data-src');
+			if(lazyTop < windowHeight){
+				$(this).attr('src', dataSrc);	
+			}
+		});
+	}
+}
+
+LazyLodingLoad();
+$(window).on('resize', LazyLoding);
+
+function LazyLoding() {
+	if($('.lazy').length > 0){
+		var windowHeight = $(window).height();
+		$('.lazy').each(function(){
+			var lazyTop = $(this).parent().offset().top;
+			var dataSrc = $(this).attr('data-src');
+			var lazyView = lazyTop - windowHeight;
+			if(lazyView > 0){
+				$(this).attr('src', dataSrc);
+			}
+		});
+	}
+}
+LazyLoding();
+$(window).on('scroll', LazyLoding);
