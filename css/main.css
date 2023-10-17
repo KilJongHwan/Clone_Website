@@ -126,13 +126,14 @@ video {
   z-index:10;
 }
 
-.header-container:after{
+.header-container::after{
   content: "";
   display: table;
   clear: both;
 }
 
 .site-container{
+	display: block;
 	max-width: 1280px;
 	margin:0 auto;
 	position: relative;
@@ -140,38 +141,16 @@ video {
 	overflow:hidden;
 }
 
-.site-container:after{
+.site-container::after{
 	content: "";
 	display: table;
 	clear: both;
 }
-
-.footer-container{
-  max-width: 1280px;
-  margin:0 auto;
-  position: relative;
-  padding:0 40px;
-}
-
-.footer-container:after{
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.site-footer{
-	flex-shrink: 0;
-}
-
 @media screen and (max-width: 1300px) and (min-width: 1025px) {
 	.header-container{
 		padding:0 3.4769vw;
 	}
 	.site-container{
-		max-width: 98.461vw;
-		padding:0 3.4769vw;
-	}
-	.footer-container{
 		max-width: 98.461vw;
 		padding:0 3.4769vw;
 	}
@@ -186,10 +165,6 @@ video {
 		max-width: 100%;
 		padding:0 2.607vw;
 	}
-	.footer-container{
-		max-width: 100%;
-		padding:0 2.607vw;
-	}
 }
 
 @media screen and (max-width: 767px) and (min-width: 1px) {
@@ -198,10 +173,6 @@ video {
 		padding:0 4.25vw;
 	}
 	.site-container{
-		max-width: 100%;
-		padding:0 6.25vw;
-	}
-	.footer-container{
 		max-width: 100%;
 		padding:0 6.25vw;
 	}
@@ -364,11 +335,11 @@ video {
    background-color:#fff;
 }
 
-.Bg-black .SiteHeaderMapButton-icon:after{
+.Bg-black .SiteHeaderMapButton-icon::after{
    background-color:#fff;
 }
 
-.Bg-black .SiteHeaderLinkLang-link:after{
+.Bg-black .SiteHeaderLinkLang-link::after{
    background-color:#fff;
 }
 
@@ -1058,7 +1029,7 @@ svg:not(:root) {
 	background-color:#000;
 }
 
-.DefaultPostThumnail:after{
+.DefaultPostThumnail::after{
 	content:"";
 	display:block;
 	padding-bottom:63.8%;
@@ -1305,7 +1276,7 @@ svg:not(:root) {
 	display:block;
 	padding:40px 0;
 }
-.NewsListItem-link:after{
+.NewsListItem-link::after{
 	content:'';
 	display:block;
 	clear:both;
@@ -1324,7 +1295,7 @@ svg:not(:root) {
 	position:relative;
 	background-color:#000;
 }
-.NewsListItem-img:after{
+.NewsListItem-img::after{
 	content:'';
 	display:block;
 	padding-bottom: 60.66%;

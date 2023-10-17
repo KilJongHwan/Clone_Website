@@ -469,6 +469,9 @@
 var $ = jQuery
 
 $(document).ready(function(){
+	 /**
+	 * NewsSlide
+	 */
 	 if($('.MainNews').length > 0){
 		var ScrollSlideSection = undefined;
 		function sectionSwiper() {
@@ -488,49 +491,16 @@ $(document).ready(function(){
 			}        
 		}
 
+		//Swiper plugin initialization
 		sectionSwiper();
+
+		//Swiper plugin initialization on window resize
 		$(window).on('resize', function(){
 			sectionSwiper();        
 		});
 	 }
 
-	 if($('.MainCareesrs').length > 0){
-		var ScrollSlideCareesrs = undefined;
-		function areesrsSwiper() {
-			var CareesrsWidth = $(window).width();
-			if(CareesrsWidth < 768 && ScrollSlideCareesrs == undefined) {            
-				ScrollSlideCareesrs = new Swiper('.MainCareesrsSlide-container', {            
-					slidesPerView: "auto",
-					freeMode: true,
-					scrollbar: {
-					  el: ".MainCareesrsSlide-scrollbar",
-					  hide: true,
-					},
-				});
-			} else if (CareesrsWidth > 767 && ScrollSlideCareesrs != undefined) {
-				ScrollSlideCareesrs.destroy();
-				ScrollSlideCareesrs = undefined;        
-			}        
-		}
-
-		areesrsSwiper();
-
-		$(window).on('resize', function(){
-			areesrsSwiper();        
-		});
-	 }
 	 
-	 var GameSlider = new Swiper(".MainGameSlide-container", {
-		observer: true,
-		observeParents: true,
-		watchOverflow: true,
-		slidesPerView: "auto",
-        navigation: {
-          nextEl: ".MainGameSlide-next",
-          prevEl: ".MainGameSlide-prev",
-        },
-      });
-	  
 	 var BlackHeight = $('.MainGame ').height();
 	 var MainStudiosHeader = $(window).height()/2.5;
 	 var WindowBlackHeight = BlackHeight + MainStudiosHeader;
